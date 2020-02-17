@@ -1,4 +1,4 @@
-# Blog Application
+# Blog Application with Chat Support
 This project is similar to an blog application where a user can post, comment, like, delete or edit blog based on roles nad chat with persons who are online. 
 
 ![](https://i.imgur.com/fryPSkj.png)
