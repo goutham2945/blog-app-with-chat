@@ -1,0 +1,82 @@
+#chat_send_msg{
+   background: #4267b2;
+    color: white;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 39rem;
+  width: 100%;
+  background-color: #e9ebee;
+  border-radius: 1rem;
+}
+
+.chat_messages {
+    background: #e9ebee;
+    height: 36.5rem;
+    border-radius: 0.7rem;
+}
+.chat_ip_row{
+   margin-top: 0.3rem;
+}
+
+.sidenav button{
+width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.radio{
+    padding: 0.5rem;
+    border-bottom: 1px solid #d6d2d2;
+    padding-left:2rem;
+}
+
+.radio span{
+    font-size: 0.7rem;
+}
+.radio span.offline {
+   color: orangered;
+}
+.radio span.online {
+   color: green;
+}
+.radio label{
+    margin-bottom: 0rem;
+    color:grey;
+    font-size:0.8rem;
+}
+.agent_div{
+   display:inline-flex;
+   margin-top:0.5rem;
+}
+.agent_div img{
+   height:2rem;
+   width:2rem;
+   border-radius:1rem;
+}
+.agent{
+  border-bottom: 1px solid #d4d0d0; 
+}
+.user_messages img{
+   height:2rem;
+   width:2rem;
+   border-radius:2rem;
+}
+.user_messages .row{
+   margin-top:0.5rem;
+}
+.status.online{
+  color:#12bf12!important;
+}
+.status.offline{
+  color:orangered!important;
+}
+
+#ip_chat_send{
+    color: white;
+    background: #4267b2;
+}

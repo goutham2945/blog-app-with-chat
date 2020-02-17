@@ -1,0 +1,40 @@
+.navbar.bg-light{
+  background-color: #4267b2!important;
+}
+.navbar {
+  padding:.1rem 1rem!important;
+}
+.navbar a{
+   color:white!important;
+}
+.dropdown-menu a{
+   color:black!important;
+}
+.navbar .fa-user-circle{
+   font-size:1.3rem;
+}
+.navbar .dropdown-menu{
+   margin-left:-6.5rem;
+   margin-top:-0.3rem;
+}
+
+.inline{
+    display: inline-flex;
+}
+
+.settings h4{
+  color:grey;
+  margin-top:3rem;
+}
+.nav-item.active{
+   display: contents;
+}
+.nav-item.active button{
+  background-color: #1877F2;
+    color: white;
+    border: none;  
+}
+.navbar .fa-comment{
+  font-size: 1.5rem;
+    color: white;
+}
