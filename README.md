@@ -33,7 +33,7 @@ The picture above will shows how the UI looks when the application is running an
 ![](https://i.imgur.com/8YECDTu.png)
   
 ##### SignIn page
-![](https://i.imgur.com/2Pbw8LP.png)
+![](https://i.imgur.com/z0xjrvX.png)
   
 ##### Edit, Delete, blog url in blog card
 ![](https://i.imgur.com/bps8EWw.png)
