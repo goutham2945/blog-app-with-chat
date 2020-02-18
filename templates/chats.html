@@ -20,16 +20,20 @@
                  <div class="user_profile" user_id={{request.user.id}} user_avatar="/static/images/{{request.user.useraddinfo.avatar}}"></div>
                  <div class="sidenav">
                        <button type="button" class="btn btn-primary disabled" >Chats </button>
-                       {% for user in users %}
-						<div class="radio">
-						  <label>
-                                 <input type="radio" name="optradio" 
-                                       user_avatar="/static/images/{{user.useraddinfo.avatar}}" 
-                                       user_id={{user.id}} 
-                                       user_name="{{user.first_name}}">&nbsp;&nbsp;&nbsp;&nbsp;{{user.first_name}}
-                          </label><br>
-						</div>
-                       {% endfor %}
+                       {% if users %}
+                           {% for user in users %}
+                            <div class="radio">
+                              <label>
+                                     <input type="radio" name="optradio" 
+                                           user_avatar="/static/images/{{user.useraddinfo.avatar}}" 
+                                           user_id={{user.id}} 
+                                           user_name="{{user.first_name}}">&nbsp;&nbsp;&nbsp;&nbsp;{{user.first_name}}
+                              </label><br>
+                            </div>
+                           {% endfor %}
+                       {% else %}
+                           <div class="radio"><label>No users found please add it to see here </label></div>
+                       {% endif %}
                  </div>
             </div>
             <div class="col-md-8">
