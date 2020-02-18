@@ -1,4 +1,4 @@
-# Blog Application
+# Blog Application with Chat Support
 This project is similar to an blog application where a user can post, comment, like, delete or edit blog based on roles nad chat with persons who are online. 
 
 ![](https://i.imgur.com/fryPSkj.png)
@@ -56,7 +56,7 @@ This project supports real time chat with the users that has logged in and it us
 - just click on the chat icon in right side of navbar
 
 ![](https://i.imgur.com/h5yYziO.png)
-- After that it will redirect to chats page where you can see all the usershad been logged in.
+- After that it will redirect to chats page where you can see all the users that had been logged in.
 ![](https://i.imgur.com/rhc7D8q.png)
 - Then click on the radio button user that you want to chat with so that it can display weather the user is oneline or not.
 - In order to check the other user is online create dummy account and login in another `Incognito tab`
