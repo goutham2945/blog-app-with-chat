@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^accounts/login/$', app_views.login_user, name="login_user"),
     url(r'^accounts/register/$', app_views.register, name="register"),
     url(r'^accounts/logout/$', app_views.logout_user, name='logout_user'),
+
+    url(r'^oauth/', include('social_django.urls', namespace='social')), # social login
     url(r'^', include('app.urls')), 
 ]

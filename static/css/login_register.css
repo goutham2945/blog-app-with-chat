@@ -14,3 +14,7 @@
 .signup .row{
   transform: translatey(20%)!important;
 }
+.btn-github{
+   background:#444444;
+   color:white!important;
+}
