@@ -83,19 +83,9 @@ STATIC_ROOT = '/var/www/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-DEFAULT_AVATARS = os.listdir(os.path.join(STATICFILES_DIRS[0], 'images'))
+IMAGES_PATH = os.path.join(STATICFILES_DIRS[0], 'images')
+DEFAULT_AVATARS = os.listdir(IMAGES_PATH)
 
-# Social login backends
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.twitter.TwitterOAuth',
-    'social_core.backends.facebook.FacebookOAuth2',
-
-    'django.contrib.auth.backends.ModelBackend',
-)
-# Dont put this here
-SOCIAL_AUTH_GITHUB_KEY = 'b8860b7af7703489e5e7'
-SOCIAL_AUTH_GITHUB_SECRET = 'f13d5170a6bb8fcafea21f94391625edfc23284e'
 
 # channel settings
 redis_host = os.environ.get('REDIS_HOST', 'localhost')
@@ -109,6 +99,47 @@ CHANNEL_LAYERS = {
     },
 }
 ASGI_APPLICATION = 'blog_app_with_chat.routing.application'
+
+# Social login backends
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.debug.debug',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'social.pipeline.debug.debug',
+
+    # user defined pipelines
+    'app.pipeline.get_avatar', # This is the path of your pipeline.py
+)
+
+# **Note**: you need to install python-social-auth else it will throw error no module social
+# REF: Gmail login: https://medium.com/@jainsahil1997/simple-google-authentication-in-django-58101a34736b  
+SOCIAL_AUTH_GOOGLE_OAUTH2_IGNORE_DEFAULT_SCOPE = True
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+    'https://www.googleapis.com/auth/userinfo.email',
+    'https://www.googleapis.com/auth/userinfo.profile'
+]
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/closePopUp/' # this will be only used to close the login page pop up after login handled in urls.py
+# Dont put this here
+SOCIAL_AUTH_GITHUB_KEY = 'b8860b7af7703489e5e7'
+SOCIAL_AUTH_GITHUB_SECRET = 'f13d5170a6bb8fcafea21f94391625edfc23284e'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '98256305834-sigps0uv7cdftlj8el6sn8iia6nkq2i3.apps.googleusercontent.com'  
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-Z8lQOZTVByeSYEnKcaPn3bT' 
+
 
 
 

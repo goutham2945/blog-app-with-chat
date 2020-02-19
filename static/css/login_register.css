@@ -14,7 +14,14 @@
 .signup .row{
   transform: translatey(20%)!important;
 }
+.btn-google{
+  background:#DD4B39;
+  color:white!important;
+}
 .btn-github{
    background:#444444;
    color:white!important;
+}
+.btn-social i{
+  padding-right:0.5rem;
 }

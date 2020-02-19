@@ -130,6 +130,8 @@ def login_user(request):
         login(request, user)
         return HttpResponseRedirect('/')
     else:
+        if request.user.id:
+           return HttpResponseRedirect('/')
         return render(request, 'registration/login.html', {'success': True})
 
 def logout_user(request):
