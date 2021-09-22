@@ -1,6 +1,6 @@
 channels==2.4.0
 channels-redis==2.4.1
-Django==3.0.3
+Django==3.1.13
 social-auth-app-django==3.1.0
 python-social-auth==0.3.6
 requests==2.22.0
